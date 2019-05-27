@@ -1,0 +1,28 @@
+# Editors temporary files
+.*.swp
+*~
+
+# tex and related
+*.tex
+*.aux
+*.log
+*.toc
+*.lot
+*.lof
+*.out
+*.bbl
+*.blg
+*.tdo
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+_minted-*
+*.mintedcmd
+*.mintedmd5
+*.pyg
+
+# output
+*.pdf
