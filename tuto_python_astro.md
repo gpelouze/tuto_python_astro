@@ -63,9 +63,9 @@ print('Hello') # commentaire en fin de ligne
 def fonction():
   ''' Les “docstrings” sont des chaines de
   caractères qui documentent les fonctions.
-  Comme les commentaires, elles net sont pas exécutées,
+  Comme les commentaires, elles ne sont pas exécutées,
   mais elles sont affichées lorsqu’on demande de la
-  documentation de la fonction (voire ci-dessous)
+  documentation de la fonction (voir ci-dessous)
   '''
   pass # cette fonction ne fait rien
 ~~~
