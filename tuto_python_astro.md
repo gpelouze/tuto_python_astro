@@ -1,10 +1,41 @@
 ---
 title: Bases de Python pour l’astronomie
 date: Septembre 2018
-shortauthor: G. Pelouze
 author:
-    - Gabriel Pelouze (gabriel.pelouze@ias.u-psud.fr)
-mainlang: french
+    - Gabriel Pelouze
+
+lang: fr
+toc: true
+numbersections: true
+toc-depth: 2
+papersize: a4
+geometry:
+    - top=30mm
+    - bottom=32mm
+    - left=20mm
+    - right=30mm
+linkcolor: blue
+urlcolor: blue
+toccolor: blue
+header-includes: |
+    \usepackage[mono=false]{libertine}
+
+    \let\oldtableofcontents\tableofcontents
+    \renewcommand{\tableofcontents}{\oldtableofcontents\clearpage}
+
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{1ex}
+    \renewcommand{\labelitemi}{–}
+
+    \usepackage{fancyhdr}
+    \usepackage{titling}
+    \fancyhead{}
+    \fancyhead[c]{\textit{\theauthor :} \thetitle}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \pagestyle{fancy}
+
+    \usepackage[linecolor=lightgray,linewidth=1pt,skipabove=12pt,skipbelow=15pt]{mdframed}
+    \surroundwithmdframed{Shaded}
 ...
 
 # Introduction
