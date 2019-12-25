@@ -1,0 +1,35 @@
+name: Release PDF
+
+on: 
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release_pdf:
+    name: Release PDF
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - id: build_pdf
+        uses: docker://pandoc/latex:2.9
+        with:
+          entrypoint: '.github/workflows/entrypoint.sh'
+      - id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - id: upload-release-asset 
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./tuto_python_astro.pdf
+          asset_name: tuto_python_astro.pdf
+          asset_content_type: application/pdf
